@@ -130,65 +130,46 @@ I used an iterative approach for the optimization of validation accuracy:
 To train the model I used these parameters: EPOCHS = 150, BATCH_SIZE = 128, rate = 0,0006, mu = 0, sigma = 0.1 .
 
 
-### Test a Model on New Images
+### Test the Model on the New Images
 #### 1. Acquiring New Images
-Here are some German traffic signs that I found on the web:
-![alt text][traffic_signs_orig]
+Here are some German traffic signs that I found on the web: 
+![new_images](examples/new_test_images.png)
 
-The "right-of-way at the next intersection" sign might be difficult to classify because the triangular shape is similiar to several other signs in the training set (e.g. "Child crossing" or "Slippery Road"). 
-Additionally, the "Stop" sign might be confused with the "No entry" sign because both signs have more ore less round shape and a pretty big red area.
+The "Stop" sign might be confused with the "No entry" sign because both signs have more ore less round shape and a pretty big red area.
 
 #### 2. Performance on New Images
 Here are the results of the prediction:
 
-![alt text][traffic_signs_prediction]
+![Prediction_of_new_test_images](examples/Prediction_of_new_test_images.png)
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 95.1%
 
-The code for making predictions on my final model is located in the 21th cell of the [jupyter notebook](Traffic_Sign_Classifier.html).
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 95.6%
+
+The code for making predictions on my final model is located in the `Predict the Sign Type for Each Image` cell of the `Traffic_Sign_Classifier.ipynb/html`
 
 #### 3. Model Certainty - Softmax Probabilities
-In the following images the top five softmax probabilities of the predictions on the captured images are outputted. As shown in the bar chart the softmax predictions for the correct top 1 prediction is bigger than 98%. 
-![alt text][prediction_probabilities_with_barcharts]
+In the following images the top five softmax probabilities of the predictions on the captured images are outputted. 
+![new_test_images_results](examples/new_test_images_results.png)
 
 The detailed probabilities and examples of the top five softmax predictions are given in the next image.
-![alt text][prediction_probabilities_with_examples]
+![new_test_images_results_barh](examples/new_test_images_results_barh.png)
 
-### Possible Future Work
+### Visualizing the Neural Network
+
+It would be great to see what the network sees e.g. the visual output of your trained network's feature maps:
+
+![feature_map](examples/feature_map.png)
+
+The neural network uses the many characteristics to make classifications like bourdays and edges posistions.
+
+### How to improve this work
+
 #### 1. Augmentation of Training Data
-Augmenting the training set might help improve model performance. Common data augmentation techniques include rotation, translation, zoom, flips, inserting jitter, and/or color perturbation. I would use [OpenCV](https://opencv.org) for most of the image processing activities.
+Augmenting the training set might help improve model performance. Common data augmentation techniques include rotation, translation, zoom, flips, inserting jitter, and/or color perturbation. I suggest [OpenCV](https://opencv.org) for most of the image processing activities.
 
-#### 2. Analyze the New Image Performance in more detail
-All traffic sign images that I used for testing the predictions worked very well. It would be interesting how the model performs in case there are traffic sign that are less similiar to the traffic signs in the training set. Examples could be traffic signs drawn manually or traffic signs with a label that was not defined in the training set. 
+#### 2. Further Experiments with TensorFlow
+I suggest to investigate how alternative model architectures such as Inception, VGG, AlexNet, ResNet perfom on the given training set. 
 
-#### 3. Visualization of Layers in the Neural Network
-In Step 4 of the jupyter notebook some further guidance on how the layers of the neural network can be visualized is provided. It would be great to see what the network sees. 
-Additionally it would be interesting to visualize the learning using [TensorBoard](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard)
-
-#### 4. Further Experiments with TensorFlow
-I would like to investigate how alternative model architectures such as Inception, VGG, AlexNet, ResNet perfom on the given training set. There is a tutorial for the [TensorFlow Slim](https://github.com/tensorflow/models/tree/master/research/slim) library which could be a good start.
-
-### Additional Reading
-#### Extra Important Material
-* [Fast AI](http://www.fast.ai/)
-* [A Guide To Deep Learning](http://yerevann.com/a-guide-to-deep-learning/)
-* [Dealing with unbalanced data](https://medium.com/@vivek.yadav/dealing-with-unbalanced-data-generating-additional-data-by-jittering-the-original-image-7497fe2119c3#.obfuq3zde)
-* [Improved Performance of Deep Learning On Traffic Sign Classification](https://medium.com/@vivek.yadav/improved-performance-of-deep-learning-neural-network-models-on-traffic-sign-classification-using-6355346da2dc#.tq0uk9oxy)
-
-#### Batch size discussion
-* [How Large Should the Batch Size be](http://stats.stackexchange.com/questions/140811/how-large-should-the-batch-size-be-for-stochastic-gradient-descent)
-
-#### Adam optimizer discussion
-* [Optimizing Gradient Descent](http://sebastianruder.com/optimizing-gradient-descent/index.html#adam)
-
-#### Dropouts
-* [Analysis of Dropout](https://pgaleone.eu/deep-learning/regularization/2017/01/10/anaysis-of-dropout)
-
-
-
-
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
 
 Referencing The Project
 ---
