@@ -1,4 +1,4 @@
-## Simple and Practical Traffic Sign Classifier (Recognition)
+## Simple and Practical Traffic Sign Classifier/Recognition
 ## Writeup
 
 Overview
@@ -175,7 +175,7 @@ Referencing The Project
 ---
 If you like my code and you want to use it in your project, please refer it like this:
 
-`Amani, Sajjad. "Simple and Practical Traffic Sign Classifier on the Road." GitHub, 25 September 2019, https://github.com/Sj-Amani/TrafficSign_Classifier`
+`Amani, Sajjad. "Simple and Practical Traffic Sign Classifier/Recognition on the Road." GitHub, 13 October 2019, https://github.com/Sj-Amani/TrafficSign_Classifier`
 
 
 
