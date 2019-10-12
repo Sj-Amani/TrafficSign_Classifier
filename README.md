@@ -105,9 +105,9 @@ To train the model, I used an Adam optimizer and the following hyperparameters:
 
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of **0.996**
+* validation set accuracy of **0.975** 
+* test set accuracy of **0.954**
 
 #### 4. Solution Approach
 I used an iterative approach for the optimization of validation accuracy:
@@ -125,7 +125,7 @@ I used an iterative approach for the optimization of validation accuracy:
 
 1. Add dropout in layer 2 (minor improvement).
 
-1. Doing further reduction of learning rate and increase of epochs. The validation accuracy got **???%** 
+1. Doing further reduction of learning rate and increase of epochs. The validation accuracy got **0.975** 
 
 To train the model I used these parameters: EPOCHS = 150, BATCH_SIZE = 128, rate = 0,0006, mu = 0, sigma = 0.1 .
 
@@ -143,7 +143,7 @@ Here are the results of the prediction:
 ![Prediction_of_new_test_images](examples/Prediction_of_new_test_images.png)
 
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 95.6%
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 95.4%
 
 The code for making predictions on my final model is located in the `Predict the Sign Type for Each Image` cell of the `Traffic_Sign_Classifier.ipynb/html`
 
@@ -168,7 +168,7 @@ The neural network uses the many characteristics to make classifications like bo
 Augmenting the training set might help improve model performance. Common data augmentation techniques include rotation, translation, zoom, flips, inserting jitter, and/or color perturbation. I suggest [OpenCV](https://opencv.org) for most of the image processing activities.
 
 #### 2. Further Experiments with TensorFlow
-I suggest to investigate how alternative model architectures such as Inception, VGG, AlexNet, ResNet perfom on the given training set. 
+I suggest to investigate how alternative model architectures such as Inception, VGG, AlexNet, ResNet perfom on the given training set (transfer learning). 
 
 
 Referencing The Project
