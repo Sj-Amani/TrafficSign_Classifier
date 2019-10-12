@@ -52,27 +52,27 @@ signs data set:
 
 Here is an exploratory visualization of the data set. 
 
-![calibration1](examples/dataset_visualization.png) 
+![visualization](examples/dataset_visualization.png) 
 
 This bar chart showing how many classes we have in the data set and each class includes how many samples.
 
-![calibration1](examples/all_traffic_signs.png)
+![all](examples/all_traffic_signs.png)
 
 ### Design and Test a Model Architecture
 
 #### 1. Preprocessing
 
-As a first step, I decided to convert the images to grayscale because several images in the training were pretty dark and contained only little color und the grayscaling reduces the amount of features and thus reduces execution time. Additionally, several research papers have shown good results with grayscaling of the images. [Yann LeCun - Traffic Sign Recognition with Multi-Scale Convolutional Networks](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf)
+As a first step, I decided to convert the images to grayscale because the grayscaling reduces the sensitivity of detection to the color and reduces execution time. 
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][grayscale]
+![grayscale](examples/grayscale.jpg)
 
-Then, I normalized the image using the formular `(pixel - 128)/ 128` which converts the int values of each pixel [0,255] to float values with range [-1,1]
+Then, I normalized the image values from [0,255] to [-1,1] using the formula `(pixel - 128)/ 128`.
 
 #### 2. Model Architecture
 
-The model architecture is based on the LeNet model architecture. I added dropout layers before each fully connected layer in order to prevent overfitting. My final model consisted of the following layers:
+The model architecture is based on the LeNet model architecture. The dropout layers added before each fully connected layer in order to prevent overfitting. My final model consisted of the following layers:
 
 | Layer                  |     Description                                |
 |------------------------|------------------------------------------------|
@@ -94,8 +94,6 @@ The model architecture is based on the LeNet model architecture. I added dropout
 | Fully connected        | outputs 43                                     |
 | Softmax                |                                                |
 
-![alt text][model_architecture]
-
 
 #### 3. Model Training
 To train the model, I used an Adam optimizer and the following hyperparameters:
@@ -107,35 +105,30 @@ To train the model, I used an Adam optimizer and the following hyperparameters:
 
 
 My final model results were:
-* training set accuracy of 99.6%
-* validation set accuracy of 97.5%
-* test set accuracy of 95.1%
+* training set accuracy of ?
+* validation set accuracy of ? 
+* test set accuracy of ?
 
 #### 4. Solution Approach
 I used an iterative approach for the optimization of validation accuracy:
-1. As an initial model architecture the original LeNet model from the course was chosen. In order to tailor the architecture for the traffic sign classifier usecase I adapted the input so that it accepts the colow images from the training set with shape (32,32,3) and I modified the number of outputs so that it fits to the 43 unique labels in the training set. The training accuracy was **83.5%** and my test traffic sign "pedestrians" was not correctly classified. 
-  (used hyper parameters: EPOCHS=10, BATCH_SIZE=128, learning_rate = 0,001, mu = 0, sigma = 0.1) 
+1. As an initial model architecture the original LeNet model from the course was chosen. In order to tailor the architecture for the traffic sign classifier usecase I adapted the input so that it accepts the color images from the training set with shape (32,32,3) and I modified the number of outputs so that it fits to the 43 unique labels in the training set. Accuracy on the validation set was lower than **0.93**. I tried to improve the accuracy by doing the followings: 
 
-1. After adding the grayscaling preprocessing the validation accuracy increased to **91%** 
-   (hyperparameter unmodified)
+1. Add the grayscaling preprocessing (major improvement).
 
-1. The additional normalization of the training and validation data resulted in a minor increase of validation accuracy: **91.8%** (hyperparameter unmodified)
+1. Doing additional normalization of the training and validation data (minor improvement).
 
-1. reduced learning rate and increased number of epochs. validation accuracy = **94%** 
-   (EPOCHS = 30, BATCH_SIZE = 128, rate = 0,0007, mu = 0, sigma = 0.1)
+1. Reduce the learning rate and increase the number of epochs (major improvement). Validation accuracy reached arround **0.94**. 
 
-1. overfitting. added dropout layer after relu of final fully connected layer: validation accuracy = **94,7%** 
-   (EPOCHS = 30, BATCH_SIZE = 128, rate = 0,0007, mu = 0, sigma = 0.1)
+1. Overfitting. Add dropout layer after the relu of fully connected layer in layer 4 (minor improvement).
 
-1. still overfitting. added dropout after relu of first fully connected layer. Overfitting reduced but still not good
+1. Still overfitting. Add dropout after the relu of fully connected layer in layer 3. Overfitting reduced but still not good.
 
-1. added dropout before validation accuracy = 0.953 validation accuracy = **95,3%** 
-   (EPOCHS = 50, BATCH_SIZE = 128, rate = 0,0007, mu = 0, sigma = 0.1)
+1. Add dropout in layer 2 (minor improvement).
 
-1. further reduction of learning rate and increase of epochs. validation accuracy = **97,5%** 
-   (EPOCHS = 150, BATCH_SIZE = 128, rate = 0,0006, mu = 0, sigma = 0.1)
+1. Doing further reduction of learning rate and increase of epochs. The validation accuracy got **???%** 
 
-![alt text][Learning]
+To train the model I used these parameters: EPOCHS = 150, BATCH_SIZE = 128, rate = 0,0006, mu = 0, sigma = 0.1 .
+
 
 ### Test a Model on New Images
 #### 1. Acquiring New Images
