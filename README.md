@@ -68,7 +68,7 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 ![grayscale](examples/grayscale.jpg)
 
-Then, I normalized the image values from [0,255] to [-1,1] using the formula `(pixel - 128)/ 128`.
+I normalized the image values from [0,255] to [-1,1] using the formula `(pixel - 128)/ 128`.
 
 #### 2. Model Architecture
 
@@ -125,14 +125,15 @@ I used an iterative approach for the optimization of validation accuracy:
 
 1. Add dropout in layer 2 (minor improvement).
 
-1. Doing further reduction of learning rate and increase of epochs. The validation accuracy got **0.975** 
+1. Doing further reduction of learning rate and increase of epochs. The validation accuracy reached to **0.975** 
 
-To train the model I used these parameters: EPOCHS = 150, BATCH_SIZE = 128, rate = 0,0006, mu = 0, sigma = 0.1 .
+To train the final model I used these parameters: EPOCHS = 150, BATCH_SIZE = 128, rate = 0,0006, mu = 0, sigma = 0.1 .
 
 
 ### Test the Model on the New Images
 #### 1. Acquiring New Images
-Here are some German traffic signs that I found on the web: 
+Here are some German traffic signs that I found on the web:
+
 ![new_images](examples/new_test_images.png)
 
 The "Stop" sign might be confused with the "No entry" sign because both signs have more ore less round shape and a pretty big red area.
@@ -160,7 +161,7 @@ It would be great to see what the network sees e.g. the visual output of your tr
 
 ![feature_map](examples/feature_map.png)
 
-The neural network uses the many characteristics to make classifications like bourdays and edges posistions.
+The neural network uses many characteristics to make classifications like borders and edges posistions.
 
 ### How to improve this work
 
