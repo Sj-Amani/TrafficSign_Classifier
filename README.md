@@ -161,7 +161,7 @@ It would be great to see what the network sees e.g. the visual output of your tr
 
 ![feature_map](examples/feature_map.png)
 
-The neural network uses many characteristics to make classifications like borders and edges posistions.
+The neural network uses different characteristics to make classifications like borders and edges posistions.
 
 ### How to improve this work
 
