@@ -79,7 +79,7 @@ As a first step, I converted the images to grayscale and then normalized the ima
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![PreProcessed_Image](output_images/PreProcessed_Image.jpg)
+![PreProcessed_Image](output_images/PreProcessed_Image.png)
 
 
 
