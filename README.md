@@ -22,7 +22,7 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-In this project, I used and improved the parts of this GitHub repo: https://github.com/MarkBroerkens/CarND-Traffic-Sign-Classifier-Project. Compared to MarkBroerkens, my code uses differnet test data and provides the visualization results for the Neural Network's state `Optional Part`. Finally, please fell free and continue to develop this code more and more. 
+In this project, I used and improved the parts of this GitHub repo: https://github.com/MarkBroerkens/CarND-Traffic-Sign-Classifier-Project. Compared to MarkBroerkens, my code uses differnet test data, parameter values and provides improved values for FASTER model training (I used 120 echos while MarkBroerkens used 150 and our final results are close to each other). Also, I have provided the visualization results for the Neural Network's state `Optional Part` which are NOT provided by MarkBroerkens. Finally, please fell free and continue to develop this code more and more. 
 
 ### Dependencies
 This work requires:
@@ -79,7 +79,7 @@ As a first step, I converted the images to grayscale and then normalized the ima
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![Pre-Processed_Image](output_images/Pre-Processed_Image.jpg)
+![PreProcessed_Image](output_images/PreProcessed_Image.jpg)
 
 
 
@@ -176,7 +176,7 @@ I have Provided for you below the visualization output of two tensorflow weight 
 
 ![feature_map2](output_images/feature_map2.png)
 
-The neural network uses different characteristics to make classifications like borders and edges posistions.
+As you can see in the above images, the neural network uses different characteristics to make classifications like boundaries, edges posistions, and the contrast in the sign's painted symbol. 
 
 
 
